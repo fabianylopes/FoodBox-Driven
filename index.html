@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>StarFood</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        background: #e5e5e5;
+        font-family: "Righteous";
+      }
+
+      .topo {
+        background: black;
+        color: rgb(252, 252, 1);
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px 0 #c2bebe;
+        font-family: "Star Jedi";
+      }
+
+      .produto {
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        box-shadow: 0 0 10px 0 #bbbbbb;
+        cursor: pointer;
+        border: 5px solid white;
+      }
+
+      h1 {
+        margin: 0;
+        font-family: "Star Jedi";
+        font-weight: normal;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 16px;
+        font-weight: normal;
+      }
+
+      h3 {
+        font-size: 30px;
+        margin-bottom: 15px;
+        font-family: "Righteous";
+        font-weight: normal;
+      }
+
+      h4 {
+        margin-top: 0;
+        margin-bottom: 5px;
+        font-size: 18px;
+      }
+
+      img {
+        width: 130px;
+        border-radius: 5px;
+        float: right;
+        margin-left: 15px;
+      }
+
+      p {
+        margin: 15px 0 0 0;
+        font-size: 14px;
+      }
+
+      .preco {
+        font-weight: bold;
+        font-size: 18px;
+      }
+
+      .botao {
+        background: yellow;
+        text-align: center;
+        padding: 15px;
+        margin-top: 30px;
+        margin-bottom: 100px;
+        border-radius: 50px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        cursor: pointer;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topo">
+      <h1>StarFood Delivery</h1>
+      <h2>o melhor dos Lanches!</h2>
+    </div>
+
+    <h3>Escolha o seu Salgado</h3>
+    <div id="empanadas" class="produto" onclick="escolherEmpanadas()">
+      <img
+        src="https://mapadomundo.org/wp-content/uploads/2016/12/Empanada_iStock.jpg"
+      />
+      <h4>Empanadas Argentinas</h4>
+      <p>Sabor carne</p>
+      <p class="preco">R$ 14,90</p>
+    </div>
+    <div id="croaca" class="produto" onclick="escolherCroaca()">
+      <img
+        src="https://nutrimassasesalgados.com/wp-content/uploads/2020/05/MG_6989-copiar.jpg"
+      />
+      <h4>Croaçã</h4>
+      <p>Sabor carne, frango ou queijo</p>
+      <p class="preco">R$ 12,90</p>
+    </div>
+
+    <h3>Escolha a sua bebida</h3>
+    <div id="aguadecoco" class="produto" onclick="escolherAguadecoco()">
+      <img
+        src="http://conteudo.imguol.com.br/c/entretenimento/d7/2018/03/16/agua-de-coco-1521212503283_v2_1254x836.jpg"
+      />
+      <h4>Água de Coco</h4>
+      <p>Natural</p>
+      <p class="preco">R$ 2,90</p>
+    </div>
+    <div id="refresco" class="produto" onclick="escolherRefresco()">
+      <img
+        src="https://img.itdg.com.br/tdg/images/blog/uploads/2019/06/sucos.jpg"
+      />
+      <h4>Refresco</h4>
+      <p>Sabores: Laranja, limão ou morango</p>
+      <p class="preco">R$ 4,90</p>
+    </div>
+
+    <h3>Escolha o seu doce</h3>
+    <div id="donuts" class="produto" onclick="escolherDonuts()">
+      <img
+        src="https://blog.pajaris.com.br/wp-content/uploads/2020/10/donuts-gourmet.jpg"
+      />
+      <h4>Donuts</h4>
+      <p>Sabores variados</p>
+      <p class="preco">R$ 6,90</p>
+    </div>
+    <div id="alfajor" class="produto" onclick="escolherAlfajor()">
+      <img
+        src="http://1.bp.blogspot.com/-hVbWIeKVh_k/ULz0my44kxI/AAAAAAAACdo/vXRiqGFALxs/s1600/prato+t%C3%ADpico+da+argentina.jpg"
+      />
+      <h4>Alfajor</h4>
+      <p>Sabor Doce de Leite</p>
+      <p class="preco">R$ 4,90</p>
+    </div>
+
+    <div class="botao" onclick="finalizarPedido()">
+      Finalizar pedido
+    </div>
+
+    <script>
+      let salgado, bebida, doce;
+
+      function escolherEmpanadas() {
+        document.getElementById("empanadas").style.borderColor = "yellow";
+        document.getElementById("croaca").style.borderColor = "white";
+        salgado = "Empanadas";
+      }
+
+      function escolherCroaca() {
+        document.getElementById("croaca").style.borderColor = "yellow";
+        document.getElementById("empanadas").style.borderColor = "white";
+        salgado = "Croaçã";
+      }
+
+      function escolherAguadecoco() {
+        document.getElementById("aguadecoco").style.borderColor = "yellow";
+        document.getElementById("refresco").style.borderColor = "white";
+        bebida = "Água de Coco";
+      }
+
+      function escolherRefresco() {
+        document.getElementById("refresco").style.borderColor = "yellow";
+        document.getElementById("aguadecoco").style.borderColor = "white";
+        bebida = "Refresco";
+      }
+
+      function escolherDonuts() {
+        document.getElementById("donuts").style.borderColor = "yellow";
+        document.getElementById("alfajor").style.borderColor = "white";
+        doce = "Donuts";
+      }
+
+      function escolherAlfajor() {
+        document.getElementById("alfajor").style.borderColor = "yellow";
+        document.getElementById("donuts").style.borderColor = "white";
+        doce = "Alfajor";
+      }
+
+      function finalizarPedido() {
+        alert(
+          "Seu pedido referente a: " +
+            salgado +
+            ", " +
+            bebida +
+            " e " +
+            doce +
+            " está a caminho!"
+        );
+      }
+    </script>
+  </body>
+</html>
