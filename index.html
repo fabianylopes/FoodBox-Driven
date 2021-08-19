@@ -199,15 +199,17 @@
       }
 
       function finalizarPedido() {
-        alert(
-          "Seu pedido referente a: " +
-            salgado +
-            ", " +
-            bebida +
-            " e " +
-            doce +
-            " está a caminho!"
-        );
+        let mensagem;
+
+        mensagem =
+          "Olá, gostaria de pedir um combo: " +
+          salgado +
+          ", " +
+          bebida +
+          " e " +
+          doce +
+          ".";
+        window.open("https://wa.me/+558499999999?text=" + mensagem);
       }
     </script>
   </body>
